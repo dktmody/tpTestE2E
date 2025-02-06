@@ -55,7 +55,7 @@ class UserManager {
         if (!$this->getUser($id)) {
             throw new Exception("Utilisateur introuvable.");
         }
-        $stmt = $this->pdo->prepare("UPDATE users SET name = ?, email = ?, role = ? WHERE id = ?");
+        $stmt = $this->db->prepare("UPDATE users SET name = ?, email = ?, role = ? WHERE id = ?");
         $stmt->execute([$name, $email, $role, $id]);
     }
 
